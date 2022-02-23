@@ -17,11 +17,15 @@ export default {
   components: {
     MyHeader,
     MyMain,
-    MyFooter
+    MyFooter,
   }
 }
 </script>
 
 <style lang="scss">
+
 @import "./assets/style/general.scss";
+
 </style>
+
+

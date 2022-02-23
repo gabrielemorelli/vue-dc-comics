@@ -5,41 +5,13 @@
         <img src="../assets/img/dc-logo.png" alt="" />
       </div>
 
-      <nav>
-        <ul>
-          <li>
-            <a href="#">CHARACTERS</a>
-          </li>
-          <li>
-            <a href="#">COMICS</a>
-          </li>
-          <li>
-            <a href="#">MOVIES</a>
-          </li>
-          <li>
-            <a href="#">TV</a>
-          </li>
-          <li>
-            <a href="#">TV</a>
-          </li>
-          <li>
-            <a href="#">GAMES</a>
-          </li>
+      <div v-for="(item, index) in items" :key="index" class="lista">
+        {{ item.text }}
+      </div>
+    </div>
 
-          <li>
-            <a href="#">COLLECTIBILES</a>
-          </li>
-          <li>
-            <a href="#">VIDEOS</a>
-          </li>
-          <li>
-            <a href="#">FANS</a>
-          </li>
-          <li>
-            <a href="#">SHOP</a>
-          </li>
-        </ul>
-      </nav>
+    <div class="jumbotron">
+      <img src="../assets/img/jumbotron.jpg" alt="">
     </div>
   </header>
 </template>
@@ -47,6 +19,54 @@
 <script>
 export default {
   name: "MyHeader",
+
+  data() {
+    return {
+      items: [
+        {
+          link: "#",
+          text: "CARACTERS",
+        },
+        {
+          link: "#",
+          text: "COMICS",
+        },
+        {
+          link: "#",
+          text: "MOVIES",
+        },
+        {
+          link: "#",
+          text: "TV",
+        },
+        {
+          link: "#",
+          text: "TV",
+        },
+        {
+          link: "#",
+          text: "GAMES",
+        },
+
+        {
+          link: "#",
+          text: "COLLECTIBILES",
+        },
+        {
+          link: "#",
+          text: "VIDEOS",
+        },
+        {
+          link: "#",
+          text: "FANS",
+        },
+        {
+          link: "#",
+          text: "SHOP",
+        },
+      ],
+    };
+  },
 };
 </script>
 
@@ -57,24 +77,28 @@ export default {
   margin: 0 auto;
   width: 70%;
   height: 120px;
+  display: flex;
 }
+
 .logo {
   float: left;
   margin-top: 10px;
 }
-
-nav {
-  float: right;
+.lista{
+  padding: 10px;
   line-height: 120px;
+  font-size: 15px;
+ 
 }
 
-li {
-  display: inline-block;
-  a {
-    text-decoration: none;
-    color: black;
-    padding: 10px;
-    font-size: 15px;
-  }
+.jumbotron{
+width: 100%;
 }
+
+.jumbotron img{
+  object-position:top;
+  object-fit: cover;
+  height: 100%;
+}
+
 </style>

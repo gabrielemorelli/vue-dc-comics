@@ -1,12 +1,23 @@
 <template>
   <footer>
+    <!--footer top-->
     <div class="footer-top">
       <div class="row">
-        <div class="comics">
-          <img src="../assets/img/buy-comics-digital-comics.png" alt="" />
-          <p>Digital Comics</p>
+        <div v-for="(item, index) in items" :key="index" class="box">
+          <a href="#"><img :src="item.img" alt="#"></a>
+          {{ item.text }}
         </div>
 
+        <!--
+        <div class="comics">
+          <img src="../assets/img/buy-comics-digital-comics.png" alt="" />
+          <div class="text">
+        Digital Comics
+          </div>
+        
+        </div>
+
+ 
         <div class="merchandise">
           <img src="../assets/img/buy-comics-merchandise.png" alt="" />
           <span>DC Merchandise</span>
@@ -26,16 +37,22 @@
           <img src="../assets/img/buy-dc-power-visa.svg" alt="" />
           <span>DC power visa</span>
         </div>
+       -->
+
       </div>
     </div>
 
+    <!--/footer top-->
+
+    <!--inizio footer-center-->
     <div class="footer-center">
       <div class="row-2">
         <div class="footer-list">
+        
           <div class="lista">
             <h3>Dc comics</h3>
             <ul>
-              <li><a href="#">CHARACTERS</a></li>
+              <li><a href="#">characters</a></li>
               <li><a href="#">comics</a></li>
               <li><a href="#">moies</a></li>
               <li><a href="#">tv</a></li>
@@ -53,7 +70,7 @@
           <div class="lista">
             <h3>Dc comics</h3>
             <ul>
-              <li><a href="#">CHARACTERS</a></li>
+              <li><a href="#">characters</a></li>
               <li><a href="#">comics</a></li>
               <li><a href="#">moies</a></li>
               <li><a href="#">tv</a></li>
@@ -66,7 +83,7 @@
           <div class="lista">
             <h3>Dc comics</h3>
             <ul>
-              <li><a href="#">CHARACTERS</a></li>
+              <li><a href="#">characters</a></li>
               <li><a href="#">comics</a></li>
               <li><a href="#">moies</a></li>
               <li><a href="#">tv</a></li>
@@ -76,15 +93,19 @@
             </ul>
           </div>
         </div>
+  
         <div class="footer-img">
           <img src="../assets/img/dc-logo-bg.png" />
         </div>
       </div>
     </div>
+    <!--fine  footer-center-->
 
+    <!--inizio footer-bottom-->
     <div class="footer-bottom">
       <div class="footer-menu">
         <div class="menu-social">
+          <span>Follow us</span>
           <a href="#"> <img src="../assets/img/footer-facebook.png" /></a>
           <a href="#"> <img src="../assets/img/footer-periscope.png" /></a>
           <a href="#"> <img src="../assets/img/footer-pinterest.png" /></a>
@@ -96,12 +117,44 @@
         </div>
       </div>
     </div>
+    <!--fine  footer-bottom-->
   </footer>
 </template>
 
 <script>
 export default {
   name: "MyFooter",
+
+  data() {
+    return {
+      items: [
+        {
+          img: require("../assets/img/buy-comics-digital-comics.png"),
+          text: "Digital Comics",
+        },
+        {
+          img: require("../assets/img/buy-comics-merchandise.png"),
+          text: "DC Merchandise",
+        },
+        {
+          img: require("../assets/img/buy-comics-subscriptions.png"),
+          text: "subscriptions",
+        },
+        {
+          img: require("../assets/img/buy-comics-shop-locator.png"),
+          text: "Comic shop locator",
+        },
+        {
+          img: require("../assets/img/buy-dc-power-visa.svg"),
+          text: "DC power visa",
+        },
+      ],
+
+
+
+      
+    };
+  },
 };
 </script>
 
@@ -112,11 +165,13 @@ export default {
 footer {
   background-color: $primarycolor;
 }
+/*footer-top*/
 
 .footer-top {
   margin: 0 auto;
   width: 70%;
 }
+
 .row {
   display: flex;
   justify-content: space-around;
@@ -129,6 +184,10 @@ footer {
   width: 50px;
 }
 
+
+/*footer-top*/
+
+/*footer-center*/
 .footer-center {
   background-image: url("../assets/img/footer-bg.jpg");
 }
@@ -142,6 +201,8 @@ footer {
 
 .lista h3 {
   color: white;
+  padding: 15px 0px;
+  text-transform: uppercase;
 }
 
 .lista {
@@ -158,6 +219,7 @@ footer {
   list-style-type: none;
   text-decoration: none;
   color: lightgray;
+  line-height: 20px;
 }
 
 .footer-img {
@@ -172,10 +234,12 @@ footer {
   top: -50px;
   width: 100%;
 }
+/*.footer-center*/
 
-.footer-bottom{
+/*footer-bottom*/
+.footer-bottom {
   width: 100%;
- background-color: #303030;
+  background-color: #303030;
 }
 
 .btn {
@@ -196,12 +260,18 @@ footer {
   padding: 10px;
 }
 
+.menu-social span {
+  color: $primarycolor;
+  text-transform: uppercase;
+}
+
 .menu-social {
   float: right;
-  line-height: 150px;
 }
 
 .bottone {
   float: left;
 }
+
+/*.footer-bottom*/
 </style>
