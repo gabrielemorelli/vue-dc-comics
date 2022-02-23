@@ -130,6 +130,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   min-height: 300px;
+  padding:  40px;
 }
 
 .bottone{

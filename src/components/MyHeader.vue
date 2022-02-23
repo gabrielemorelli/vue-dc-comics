@@ -4,14 +4,15 @@
       <div class="logo">
         <img src="../assets/img/dc-logo.png" alt="" />
       </div>
-
-      <div v-for="(item, index) in items" :key="index" class="lista">
-        {{ item.text }}
+      <div class="menu-list">
+        <div v-for="(item, index) in items" :key="index" class="lista">
+          {{ item.text }}
+        </div>
       </div>
     </div>
 
     <div class="jumbotron">
-      <img src="../assets/img/jumbotron.jpg" alt="">
+      
     </div>
   </header>
 </template>
@@ -72,33 +73,36 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-
 .testata {
   margin: 0 auto;
   width: 70%;
   height: 120px;
-  display: flex;
+ 
 }
 
 .logo {
   float: left;
   margin-top: 10px;
+  width: 20%;
 }
-.lista{
+
+.menu-list {
+  display: flex;
+  justify-content: flex-end;
+  width: 80%;
+}
+.lista {
   padding: 10px;
   line-height: 120px;
   font-size: 15px;
- 
 }
 
-.jumbotron{
-width: 100%;
+.jumbotron {
+ height: 350px;
+  background-image: url('../assets/img/jumbotron.jpg');
+  background-position: top;
+background-size: cover;
 }
 
-.jumbotron img{
-  object-position:top;
-  object-fit: cover;
-  height: 100%;
-}
 
 </style>

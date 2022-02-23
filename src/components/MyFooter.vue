@@ -176,12 +176,12 @@ footer {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  vertical-align: middle;
   height: 200px;
 }
 
 .footer-top img {
   width: 50px;
+  vertical-align: middle;
 }
 
 
@@ -263,6 +263,7 @@ footer {
 .menu-social span {
   color: $primarycolor;
   text-transform: uppercase;
+ 
 }
 
 .menu-social {
